@@ -1,8 +1,11 @@
 from fastapi import FastAPI, APIRouter
-from routers.sample import router as document_router
+from routers.sample import router as sample_router
+from routers.aws import router as aws_router
+
 llmworkflow_router = APIRouter()
 
-llmworkflow_router.include_router(document_router)
+llmworkflow_router.include_router(sample_router)
+llmworkflow_router.include_router(aws_router)
 
 def start_app() -> FastAPI:
     '''
