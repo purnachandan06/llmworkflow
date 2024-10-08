@@ -5,7 +5,7 @@ from settings import settings
 
 api = FastAPI()
 
-api.mount("/api", app)
+api.mount(path="/api",app= app, name="llmworkflow")
 
 if __name__ == "__main__":
     uvicorn.run(api, host="0.0.0.0", port=8000)

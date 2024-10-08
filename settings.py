@@ -16,8 +16,13 @@ class Settings():
     AZURE_OPENAI_API_VERSION = os.getenv('AZURE_OPENAI_API_VERSION')
     AZURE_OPENAI_EMBEDDINGS_MODEL = os.getenv('AZURE_OPENAI_EMBEDDINGS_MODEL')
 
+    #AWS BEDROCK
+    AWS_REGION = os.getenv('AWS_REGION')
+    AWS_ACCESS_KEY = os.getenv('AWS_ACCESS_KEY')
+    AWS_SECRET_KEY = os.getenv('AWS_SECRET_KEY')
+
     #QDRANT
     QDRANT_BASE_URL = os.getenv('QDRANT_BASE_URL')
     QDRANT_API_KEY = os.getenv('QDRANT_API_KEY')
-    
+
 settings = Settings()
