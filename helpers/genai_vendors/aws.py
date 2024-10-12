@@ -1,5 +1,5 @@
 import boto3
-from langchain_aws import BedrockLLM
+from langchain_aws import BedrockLLM, BedrockEmbeddings
 from helpers.genai_vendors.genaivendor import GenAiVendor
 from settings import settings
 
@@ -28,3 +28,15 @@ class AwsBedrock(GenAiVendor):
         #            ("human", message)]
         response_message = instance.invoke(input = message)
         return response_message
+
+    def embeddings(self, message: str, model: str):
+        """
+        Method to perform embeddings request
+        """
+        instance = BedrockEmbeddings(client=self.boto3client,
+                                     model_id=model)
+        response_message = instance.embed_query(message)
+
+        return {
+            "embeddings": response_message
+        }
