@@ -21,6 +21,9 @@ class Settings():
     AWS_ACCESS_KEY = os.getenv('AWS_ACCESS_KEY')
     AWS_SECRET_KEY = os.getenv('AWS_SECRET_KEY')
 
+    #GOOGLE VERTEX
+    GOOGLE_CREDENTAILS_JSON = os.getenv('GOOGLE_CREDENTAILS_JSON')
+    
     #QDRANT
     QDRANT_BASE_URL = os.getenv('QDRANT_BASE_URL')
     QDRANT_API_KEY = os.getenv('QDRANT_API_KEY')

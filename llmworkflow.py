@@ -1,11 +1,13 @@
 from fastapi import FastAPI, APIRouter
 from routers.sample import router as sample_router
-from routers.aws import router as aws_router
+from routers.aws_bedrock import router as aws_router
+from routers.google_vertex import router as google_vertex_router
 
 llmworkflow_router = APIRouter()
 
 llmworkflow_router.include_router(sample_router)
 llmworkflow_router.include_router(aws_router)
+llmworkflow_router.include_router(google_vertex_router)
 
 def start_app() -> FastAPI:
     '''

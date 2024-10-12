@@ -1,5 +1,5 @@
-from schemas.aws import AwsChat, AwsEmbeddings
-from helpers.genai_vendors.aws import AwsBedrock
+from schemas.aws_bedrock import AwsChat, AwsEmbeddings
+from helpers.genai_vendors.aws_bedrock import AwsBedrock
 
 def chat(chat_request: AwsChat):
     """

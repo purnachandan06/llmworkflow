@@ -1,6 +1,6 @@
 from fastapi import APIRouter
-import schemas.aws as schema
-import services.aws as service
+import schemas.aws_bedrock as schema
+import services.aws_bedrock as service
 
 router = APIRouter(prefix="/aws", tags=["aws"])
 
