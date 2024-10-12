@@ -1,12 +1,19 @@
 from fastapi import APIRouter
-from schemas.aws import AwsChat
-from services.aws import chat
+import schemas.aws as schema
+import services.aws as service
 
 router = APIRouter(prefix="/aws", tags=["aws"])
 
 @router.post("/chat")
-def chat_request(chat_request: AwsChat):
+def chat_request(chat_request: schema.AwsChat):
     """
     Api to chat using aws bedrock
     """
-    return chat(chat_request)
+    return service.chat(chat_request)
+
+@router.post("/embeddings")
+def embeddings_request(embedding_request: schema.AwsEmbeddings):
+    """
+    Api to chat using aws bedrock
+    """
+    return service.embeddings(embedding_request)

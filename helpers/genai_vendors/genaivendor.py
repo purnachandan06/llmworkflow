@@ -13,3 +13,10 @@ class GenAiVendor(ABC):
         Method to perform chat request
         """
         pass
+
+    @abstractmethod
+    def embeddings(self, message: str, model: str):
+        """
+        Method to perform embeddings request
+        """
+        pass
